@@ -35,8 +35,8 @@ function getResponse(numOfDog,breed){
     
     .then(response => {
       if (response.ok){
-        response.json();
-        console.log(response.json());
+        return response.json();
+        
       }
       throw ('response.statusText');
     })
