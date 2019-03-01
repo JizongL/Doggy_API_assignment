@@ -33,8 +33,15 @@ function getResponse(numOfDog,breed){
   fetch(`https://dog.ceo/api/breed/${breed}/images/random/${numOfDog}`)
     
     
-    //.then(response => console.log(response.ok))
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok){
+        response.json();
+        console.log(response.json());
+      }
+      throw ('response.statusText');
+    })
+    
+    //.then(response => response.json())
     
     .then(responseJson=> render(responseJson))
     
@@ -49,7 +56,7 @@ function watchForm(){
     event.preventDefault();
     
     let numOfDog = $('#number-of-dogs').val();
-    if(numOfDog >50) alert('please enter a number between 3~50');
+    if(numOfDog >50) alert('please enter a number between 1~50');
     $('#number-of-dogs').val('');
     let breed = $('#breed-of-dogs').val();
     console.log(breed);
