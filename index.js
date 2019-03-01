@@ -5,9 +5,16 @@ function generateDisplayElement(responseJson){
   console.log('array length',responseJson.message.length);
   let htmlArray = [];
   for (let i=0;i<responseJson.message.length;i++){
-    htmlArray.push(`<img src = ${responseJson.message[i]}>`);
+    htmlArray.push(`
+    <div class = 'col-3'>
+      <div class='box'>
+      <img src = ${responseJson.message[i]}>
+     </div>
+    </div>
+    `);
   }
-  return htmlArray.join();
+  console.log(htmlArray);
+  return htmlArray.join('');
 }
 
 
