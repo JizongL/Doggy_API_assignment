@@ -7,14 +7,50 @@ main .row {
 }
 
 .box {
-  height: 200px;
+  
   text-align: center;
   padding-top: 30px;
   
-  margin-top:15px;
+  margin-top:25px;
 }
 
 img{
   width:220px;
   height:200px;
+}
+
+.container{
+  width:100%;
+  padding:20px;
+  color:white;
+  background-color:green;
+  font-family: 'Underdog', cursive;
+  font-size:20px;
+}
+
+form {
+  text-align: center;
+  
+}
+
+
+fieldset{
+  border:none;
+  vertical-align: bottom;
+  margin-bottom:10px;
+}
+
+form input{
+  font-size:20px;
+  margin-top:15px;
+  vertical-align: bottom;
+
+}
+
+
+
+button{
+  margin-top:15px;
+  font-size:20px;
+  font-family: 'Roboto Condensed', sans-serif;
 }

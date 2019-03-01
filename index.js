@@ -8,7 +8,9 @@ function generateDisplayElement(responseJson){
     htmlArray.push(`
     <div class = 'col-3'>
       <div class='box'>
+      <a target = "_blank" href=${responseJson.message[i]}>
       <img src = ${responseJson.message[i]}>
+      </a>
      </div>
     </div>
     `);
@@ -26,15 +28,20 @@ function render(responseJson){
 }
 
 
-
-function getResponse(numOfDog){
+function getResponse(numOfDog,breed){
   console.log('get response from API');
-  fetch(`https://dog.ceo/api/breeds/image/random/${numOfDog}`)
+  fetch(`https://dog.ceo/api/breed/${breed}/images/random/${numOfDog}`)
+    
+    
+    //.then(response => console.log(response.ok))
     .then(response => response.json())
+    
     .then(responseJson=> render(responseJson))
     
-    .catch(error => alert('Doggies are sleeping, try again later')); 
-}
+    .catch(err => {
+      $('.dog-img-area').text(`Something went wrong: ${err.message}`);
+    });
+} 
 
 function watchForm(){
   console.log('watchForm ran');
@@ -43,9 +50,10 @@ function watchForm(){
     
     let numOfDog = $('#number-of-dogs').val();
     if(numOfDog >50) alert('please enter a number between 3~50');
-    
     $('#number-of-dogs').val('');
-    getResponse(numOfDog);
+    let breed = $('#breed-of-dogs').val();
+    console.log(breed);
+    getResponse(numOfDog,breed);
   });
 }
 

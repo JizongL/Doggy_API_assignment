@@ -7,6 +7,9 @@
     <title>Dog API Example</title>
     <link rel="stylesheet" href="fluidGrid.css">
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Underdog" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Underdog" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.3.1.js"> </script>
 </head>
 <body>
@@ -16,8 +19,19 @@
         <h1>How many doggies do you want to see</h1>
 
         <form role = 'submit-form' class = 'dog-search-form'>
-          <input id = 'number-of-dogs' type="text" placeholder= 3 value=3 required>
-          <button id = 'submit-button' type="submit">See Doggies</button>
+          <fieldset>
+          <div>
+          <label>Number of doggies
+          <input id = 'number-of-dogs' type="text"  value= '3' required> 
+          </label>
+          </div>
+          <div>
+          <label>Breed of doggies
+          <input id = 'breed-of-dogs' type="text"  value='hound' required>
+          </label>
+          </div>
+          <button id = 'submit-button' type="submit">Search Doggies</button>
+          </fieldset>
         </form>
     </div>   
     </div>
